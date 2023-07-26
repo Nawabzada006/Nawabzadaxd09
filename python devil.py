@@ -25,30 +25,26 @@ def sp(stri):
         sys.stdout.flush()
         sleep(0.03)
 
-logo =  """\033[1;37;1m     
+logo =  """\033[1;33m     
+\033[1;33m
+\033[1;33m _   _                     _                 _        
+\033[1;33m| \ | |                   | |               | |       
+\033[1;33m|  \| | __ ___      ____ _| |__ ______ _  __| | __ _  
+\033[1;33m| . ` |/ _` \ \ /\ / / _` | '_ \_  / _` |/ _` |/ _` | 
+\033[1;33m| |\  | (_| |\ V  V / / / (_| | (_| | (_| | 
+\033[1;33m\_| \_/\__,_| \_/\_/ \__,_|_.__/___\__,_|\__,_|\__,_| 
+                                                      
+                                                      
 
-
-\033[1;37;1m          
-\033[1;37;1m ███    ██  █████  ██     ██  █████  ██████  ███████  █████  ██████   █████      
-\033[1;37;1m ████   ██ ██   ██ ██     ██ ██   ██ ██   ██    ███  ██   ██ ██   ██ ██   ██     
-\033[1;37;1m ██ ██  ██ ███████ ██  █  ██ ███████ ██████    ███   ███████ ██   ██ ███████     
-\033[1;37;1m ██ ██ ██   ██ ██ ███ ██ ██   ██ ██   ██  ███    ██   ██ ██   ██ ██   ██     
-\033[1;37;1m ██   ████ ██   ██  ███ ███  ██   ██ ██████  ███████ ██   ██ ██████  ██   ██     
-                                                                                
-                                                                                
-                        
-
-                                                                                
-                      
-                                         
+                                
                                          
 
 
-	\033[1;37;1m  Author   : Nawabzada khan
+	\033[1;37;1m  Author   : Nawabzada Tricker
 \033[1;37;1m  Facebook : https://www.facebook.com/Nawab082
-\033[1;37;1m  Whatsapp : +91 9927564009
+\033[1;37;1m  Whatsapp : +91 9368357296 
 \033[1;37;1m  Virson   : 2.1.0
-\033[1;37;1m------------------TH1S TOOL CR3AT BY N4W9B  TH3 KHOF M4K3R XD----------------------------"""
+\033[1;37;1m-----------------------------------------------"""
 
 def menu():
 	os.system('clear')
@@ -121,22 +117,25 @@ def findtextchat(curl):
 
 def sendtextconvo(comment):
     try:
-        browser.select_form(nr = 1)
+        browser.select_form(nr=1)
     except mechanize._mechanize.FormNotFoundError:
-        print("Some error occured while finding text area, please check your account")
-        exit(1)
+        print("Some error occurred while finding the text area, please check your account")
+        return
     try:
         browser.form['body'] = comment
     except mechanize._form_controls.ControlNotFoundError:
-        print("Some error occured while filling text, please check your account")
-        exit(1)
-    r = browser.submit()
-    e = datetime.datetime.now()
-    print("\033[1;32;40m", end = "")
-    print (e.strftime("%d/%m/%Y   %I:%M:%S %p"))
-    print(">>", line, "\n")
-except urllib.error.URLErro:
-print(">Net Chod Gya bsdk...") sleep(5)
+        print("Some error occurred while filling the text, please check your account")
+        return
+    try:
+        r = browser.submit()
+        e = datetime.datetime.now()
+        print("\033[1;32;40m", end="")
+        print(e.strftime("%d/%m/%Y   %I:%M:%S %p"))
+        print(">>", line, "\n")
+    except urllib.error.URLError:
+        print("Net chud gya bsdk...")
+        sleep(5)
+
 print("\033[1;33;40m", end = "")
 os.system('clear')
 print(logo)
